@@ -19,9 +19,12 @@ api_secret_key = os.getenv('AMP_SECRET_KEY')
 current_datetime = datetime.now()
 yesterday_datetime = datetime.now() - timedelta(days=1)
 
-# Format dates
-today = current_datetime.strftime('%Y%m%d') + 'T00'
-yesterday = yesterday_datetime.strftime('%Y%m%d') + 'T00'
+# dynamic dates
+# today = current_datetime.strftime('%Y%m%d') + 'T00'
+# yesterday = yesterday_datetime.strftime('%Y%m%d') + 'T00'
+
+yesterday = '20250101T00'
+today = '20250114T00'
 
 # Build API endpoint
 url = 'https://analytics.eu.amplitude.com/api/2/export'
