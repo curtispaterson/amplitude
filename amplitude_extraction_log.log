@@ -1,0 +1,3 @@
+2025-01-27 10:22:26,674 Starting new HTTPS connection (1): analytics.eu.amplitude.com:443
+2025-01-27 10:22:27,435 https://analytics.eu.amplitude.com:443 "GET /api/2/export?start=20250126T00&end=20250127T00 HTTP/1.1" 200 131305
+2025-01-27 10:22:28,131 Harmless debug Message

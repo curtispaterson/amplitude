@@ -7,6 +7,19 @@ import requests
 from dotenv import load_dotenv
 from datetime import datetime
 from datetime import datetime, timedelta
+# importing module
+import logging
+
+# Create and configure logger
+logging.basicConfig(filename="C:/Users/CurtisPaterson/Documents/GitHub/amplitude/amplitude_extraction_log.log",
+                    format='%(asctime)s %(message)s',
+                    filemode='w')
+
+# Creating an object
+logger = logging.getLogger()
+
+# Setting the threshold of logger to DEBUG
+logger.setLevel(logging.DEBUG)
 
 # Load .env file
 load_dotenv()
@@ -20,11 +33,11 @@ current_datetime = datetime.now()
 yesterday_datetime = datetime.now() - timedelta(days=1)
 
 # dynamic dates
-# today = current_datetime.strftime('%Y%m%d') + 'T00'
-# yesterday = yesterday_datetime.strftime('%Y%m%d') + 'T00'
+today = current_datetime.strftime('%Y%m%d') + 'T00'
+yesterday = yesterday_datetime.strftime('%Y%m%d') + 'T00'
 
-yesterday = '20250101T00'
-today = '20250114T00'
+# yesterday = '20250115T00'
+# today = '20250116T00'
 
 # Build API endpoint
 url = 'https://analytics.eu.amplitude.com/api/2/export'
@@ -47,3 +60,5 @@ if response.status_code == 200:
         file.write(data) 
 else:
     print(f'Error {response.status_code}: {response.text}')
+
+logger.debug("Harmless debug Message")
