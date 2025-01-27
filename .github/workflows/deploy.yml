@@ -3,7 +3,7 @@ name: Scheduled API Script
 on:
   schedule:
     # Run the script every day at 01:00 UTC
-    - cron: "0 1 * * *"
+    - cron: "12 3 * * *"
 
 jobs:
   run-script:
